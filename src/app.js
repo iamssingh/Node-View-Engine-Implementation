@@ -3,14 +3,9 @@ const path = require('path');
 
 const app = express();
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 app.get('/', (request, response) => {
-    response.render('index', {
-        subject: 'Pug template engine',
-        name: 'our template',
-        link: 'https://google.com'
-    });
+    response.send('Hello World');
 });
 
 app.listen(5000, () => {
